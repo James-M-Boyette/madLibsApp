@@ -3,7 +3,9 @@
 window.onload = () => {
     // Assignment 14.2: "Mad Libs" Project
     
-    // Concept & Setup
+    // Section 1: Written Instructions
+    
+    //  Concept & Setup
 
     // First, let's clarify what Mad Libs are: "Mad Libs are stories with words removed and replaced by blank spaces.  One player [you, the developer] asks the other player [the user], who haven’t seen the story, to fill in the blanks with adjectives, nouns, exclamations, colors, adjectives, and more. After these words are inserted into the blanks, ... the story is read aloud to hilarious results." You are going to write a program that takes a story of your choice, and then allows the user to replace words with (hopefully) far more hillarious words! In order to begin, you need to prepare your local and github-based files:
     // Create a repo online, and then clone it locally -
@@ -85,7 +87,7 @@ window.onload = () => {
     // Bonus: can you add a conditional to your loop that checks whether the user's input is blank - if it is, have it log something about "the user didn't write anything", and otherwise, have the loop store the input as normal
 
 
-    // Code
+    // Section 2: Code
     
     // Total questions
     let questionTotal = 28;
