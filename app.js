@@ -162,3 +162,37 @@ window.onload = () => {
     console.log(originalStory);
     document.write(originalStory); // **This is throwing the child node error: Uncaught DOMException: Failed to execute 'removeChild' on 'Node': The node to be removed is not a child of this node.
 }
+
+// For De-Bugging:
+/* let userInputs = [
+    "1776",
+    "J.S. Bach",
+    "Nintendo 64",
+    "Bob Ross's School of Painting",
+    "dance partners",
+    "praying mantis",
+    "buttons",
+    "ballerinas",
+    "love letter",
+    "skipped",
+    "hopped",
+    "soft",
+    "it",
+    "soda can",
+    "burped",
+    "May, 4th 1983",
+    "42",
+    "socks",
+    "MoMA",
+    "London, England",
+    "strong",
+    "black hole",
+    "Liberachi",
+    "Cher",
+    "3000",
+    "bedtime story",
+    "explosion",
+    "derrigable",
+    "duck call",
+    "sing",
+]; */
