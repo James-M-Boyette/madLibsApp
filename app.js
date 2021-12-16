@@ -5,15 +5,25 @@ window.onload = () => {
     
     // Concept & Setup
 
-    // Make sure to explain what MadLibs are, in general, so the student understands what we're going for
-    // Create a repo online, and then clone it locally:
+    // First, let's clarify what Mad Libs are: "Mad Libs are stories with words removed and replaced by blank spaces.  One player [you, the developer] asks the other player [the user], who haven’t seen the story, to fill in the blanks with adjectives, nouns, exclamations, colors, adjectives, and more. After these words are inserted into the blanks, ... the story is read aloud to hilarious results." You are going to write a program that takes a story of your choice, and then allows the user to replace words with (hopefully) far more hillarious words! In order to begin, you need to prepare your local and github-based files:
+    // Create a repo online, and then clone it locally -
     // Go to github.com and click on the "new" button next to your repositories menu (on the left). Name it madLibsApp (or something similar). Keep the page that opens next open (you'll come back to it in a moment).
     // Create a folder on your computer and name it whatever you named your repo (madLibsApp etc). Migrate to this folder in your local terminal, and then enter the commands from that second github page (the first set of instructions, entitled "create a new repository from the command line"). Run "git status" to make sure everything's ready to go.
     // In your folder, create two files: an app.js file (which we will be doing the majority of our work in) and an index.html file; you can also just copy the html and js files we provided in 4.11 ...
+    // ** Should I make template files instead, with starter comments that allow students to dive right in?
     // Add, commit, and push to Github via your local console
     // **... Does BitDegree want us to film gifs etc to demo the steps?
+    // Before continuing, you should attempt to do some decomposition. If you are not familiar with decomposition, it is the practice of analyzing the problem(s) in front of you. Ask yourself, "What needs to happen in my app, generally?", "How might I achieve this using the tools I've learned so far?", and "Are there any situations I need to look out for - any problems this program might encounter?" For instance, this app 1. needs to get inputs from a user, store those inputs, and then insert those inputs into a story .. and 2. you can use variables to store their inputs - but since you will likely have them replace several pieces of the story, it may be better to store user inputs in a single array (as opposed to multiple, individual variables); and once the user inputs are in an array, you can use loops and array methods to play with that data .. and 3. are there benefits to using individual variables over a single array? any potential problems? (Consider how whether you can loop through individual variables). You should even take the time to sketch out your app in your own language before entering any code - this will considerably improve your speed once you start coding. Ex:
+    // 1: make a "user input" array 
+    // 2: make a variable and put my story in it - it needs to be a string, I think
+    // 3: replace things in the story with arrays ... oh - maybe replace them with variables and store them in a second array?
+    // 4: (potentially) make a second "replaced" array
+    // 5: make questions (for each thing I want to replace) for the user ... maybe store these in a third array?
+    // 6: make a loop that goes through each question, and stores each user input ... in a fourth array? ... but I want them to be in my second array ... how do I do this
+    // etc etc
+    // We encourage you to see how far you can get on your own, first - do decomposition and then try to write out these elements. If you hit road blocks, try using google - learning to google better versions of your current question is another essential skill you should continue to develop. Then, if you cannot solve your problem, absolutely look through this assignment's hints and detailed instructions!
     
-    // Code
+    // Instructions
 
     // Part 1, "Story"
     // First, find a story: you could choose one you find insteresting online (for instance, try googling "unbelievable but true tech stories"), or you could make one up! Something about three paragraphs-long should be fine (go shorter or longer if you'd prefer). Store this story in your code file twice: once in a variable (something like originalStory), and once at the end of your code file in its original form, commented-out (because it's always good to have the original available for refrence etc in case you make a mistake later!)
@@ -39,15 +49,20 @@ window.onload = () => {
     // [Hint] Give the following parameters: (let i = questions; i >= 0; i--)
     // Inside your loop, log 'i' to the terminal to make sure your loop is working properly
     // [Hint] remember that in order to create a list of things for our 'for' loop to do, we need to add curly-braces after our parameters ... so you should have 'for (let i = questions; i >= 0; i--) { console.log(i);}'
+    // Take a moment to add --all, commit and push. This may seem excessive, but you will want to create versions you can roll-back to or take a look at if you significantly break your code and/or confuse yourself later-on.
     // Now that we know our 'for' loop works, declare a variable *outside of the 'for' loop* that is set to 0 (named questionCounter, etc) so that we can 
     // Next, inside of your loop, increment this variable up by one, and log it (because we need a number to go up by one, and allow us to read each element of our questionArray)
+    // Again, add, commit, and push
     // Once you've confirmed that your loop both 1. decreases your 'i' variable and 2. increases your questionCounter variable, make your loop log a third thing: an element of your question array, based on your questionCounter variable (now, your loop should be able to log the first question to terminal, increase the counter by one, and then read the next question - over and over - because we are using the counter to indicate which index place in our array we'd like to read. We originally set it to '0', so our loop looks at the first position in our questionArray, and then we update the counter in order to have it look at the second position in our array; and so on.)
     // Note: you will want to put this line prior to increasing the counter in order to not accidentily miss your first question (you *don't* want to increase from 0 to 1 *before* reading from your questionArray - you want to read the zero-th index (of your array) *first*, and *then* increase the counter)
     // You should now be seeing each question in console - if you aren't, it's time to start de-bugging. 
+    // Guess what? Add, commit, and push!
     // For a better user experience, you can take this opportunity to tell the user how many questions / word-replacements they have left to answer immediately after being shown the current question: add a string that uses a tag function to concatonate your "questionsTotal" and helpful language (ie console.log(questionArray[questionCounter] + `(${questions} questions left)`)
     // In order to make this go down, add a command right after to decrement the variable (questionTotal --;)
     // Once everything works in this section, git add, commit & push
     // Also, you may wish to turn off all of your log to console commands *except* the "question" one ( console.log(questionArray[questionCounter] + `; (${questionTotal} questions left)`); )
+    // Annnnnd add, commit, and push!
+
 
     // Part 3, "User Inputs"
     // Inside of our loop, copy our remaining log-to-console command and replace its console.log with the prompt method (this will create a pop-up window with 1. Our questions, and 2. a field for users to enter things). 
@@ -56,21 +71,21 @@ window.onload = () => {
     // Store the user's input in our userInputs variable, using the .push method
     // (Hint: userInputs.push(prompt(questionArray[questionCounter] + `... ({questionTotal} questions left)`)); )
     // Add a line immediately after logging-to-console the contents of your userInputs variable and check to see whether it successfully grows with each input
-    // 
+    // If everything's working ... add, commit, and push!
     // Using the 'alert' method, add a notice for the user that they've finished giving madlib inputs (and the story is ready) - something like alert('All done! Ready for your totally-accurate, not-at-all confusing history of tech??');
     
-    
 
-    // Part 4
-
+    // Part 4, "Final Polish"
     // In order to add polish and make this project a part of your online portfolio of work, you need to do a few additional things: 
     // Convert your paragraphs to html-ready elements (add <h2></h2> tags to the beginning and end of each paragraph)
     // Add an instruction to print the story to the webpage with document.write(originalStory); (put it after you console.log the story) 
-    // If you haven't already, now is the time to go back and do a final polish on your work - delete the original nouns, verbs etc in your story so that only the tag functions remain (you want '{yearOne}' instead of 'In 1947 ${yearOne}')
+    // If you haven't already, now is the time to go back and do a final polish on your work - delete the original nouns, verbs etc in your story so that only the tag functions remain (you want '{userInputs[0]}' instead of 'In 1947 ${userInputs[0]}')
+    // For the last time (for now) add, commit, and push!
+    // You can come back later and add additional polish (change the css of your html file to get fancy text, colors, and even a background!)
+    // Bonus: can you add a conditional to your loop that checks whether the user's input is blank - if it is, have it log something about "the user didn't write anything", and otherwise, have the loop store the input as normal
 
-    // Part
 
-    // They need to push the final result to github
+    // Code
     
     // Total questions
     let questionTotal = 28;
@@ -134,7 +149,7 @@ window.onload = () => {
         // console.log(questionTotal);
         }
         
-    // should we add an "if" to make sure the user actually wrote something? Like 'if variable == "" (an empty string), re-do the message with an additional "hey - you didn't seem to add anything?""
+    // **should we add an "if" to make sure the user actually wrote something? Like 'if variable == "" (an empty string), re-do the message with an additional "hey - you didn't seem to add anything?""
        
     // The User's not-drunk history of computer bugs
     let originalStory = `<h2>In ${userInputs[0]}, computer pioneer ${userInputs[1]} found herself working on a Mark II ${userInputs[2]} at Harvard ${userInputs[3]}. It was at this time that her ${userInputs[4]} discovered a ${userInputs[5]} had gotten trapped in one of the computer’s ${userInputs[6]} and was causing an error. The ${userInputs[7]} removed the moth and taped it in their log ${userInputs[8]}, identifying it as the "first actual case of bug being ${userInputs[9]}."</h2>
@@ -149,35 +164,5 @@ window.onload = () => {
 
     // Output
     console.log(originalStory);
-    document.write(originalStory); // This is throwing the child node error: Uncaught DOMException: Failed to execute 'removeChild' on 'Node': The node to be removed is not a child of this node.
-
-
-    // -+ Original Materials +-
-    
-    // Template Story: "The Origin of computer bugs, according to a 4 year old"
-
-    // let originalStory = `In 1947 computer pioneer Grace Hopper found herself working on a Mark II Computer at Harvard University It was at this time that her associates discovered a moth had gotten trapped in one of the computer’s relays and was causing an error. The operators removed the moth and taped it in their log book  identifying it as the "first actual case of bug being found." 
-    
-    // Word got out that the team had "debugged" the computer hence leading to the phrase’s use in computing and pop culture. Hopper readily admitted that she was not there when the incident occurred, but that didn’t stop it from becoming one of her favorite stories Hopper died of natural causes on January 1, 1992 at the age of 85 For those interested, the offending moth’s remains along with the original log book can be seen at the Smithsonian National Museum of American History in Washington, D.C.
-
-    // And while this is the "modern" use case of finding a computer bug the original use of the word dates further back in time to Thomas Edison who in an 1878 letter used the term "bug" to refer to a technological glitch While he worked on the quadruplex telegraph he said it needed a "bug trap" to function properly.`
-
-    // // Question Counter
-    // var questions = 3;
-    // var questionsLeft = ' [' + questions + ' questions left]';
-    // // User-Input variables & questions
-    // var adjective = prompt('Please type an adjective' + questionsLeft);
-    // questions -= 1;
-    // questionsLeft = ' [' + questions + ' questions left]';
-    // var verb = prompt('Please type a verb that does not end in -ing ' + questionsLeft);
-    // questions -= 1;
-    // questionsLeft = ' [' + questions + ' questions left]';
-    // var noun = prompt('Please type a noun' + questionsLeft);
-    // // End of User Inputs
-    // alert('All done. Ready for the message?');
-    // // Original, The Final Result/Composit
-    // var sentence = "<h2>There once was a " + adjective;
-    // sentence += ' programmer who wanted to use JavaScript to ' + verb;
-    // sentence += ' the ' + noun + '.</h2>';
-    // document.write(sentence);
+    document.write(originalStory); // **This is throwing the child node error: Uncaught DOMException: Failed to execute 'removeChild' on 'Node': The node to be removed is not a child of this node.
 }
