@@ -91,12 +91,6 @@ window.onload = () => {
     
     // Total questions
     let questionTotal = 28;
- 
-    // Decomp:
-    // - We need to store user inputs in each variable.
-        // Maybe we can store each input as a string in an array, and then loop through that array while defining each variable with the given element? ... or maybe we can use a switch to do the same thing?
-    // - We need to run through a list of questions
-    // - We need to reduce the total number of 'questions' by 1 each time
 
     // Question Counter (which question are we on)
     let questionCounter = 0;
@@ -104,7 +98,7 @@ window.onload = () => {
     let solicitation = `Please enter a`;
     let questionArray = [
     `${solicitation} year ("2001", "2021" etc)`,
-    `${solicitation} full name`, 
+    `${solicitation} person's full name`, 
     `${solicitation} computer-specific model ("commodore 64" etc)`,
     `${solicitation} famous school`,
     `${solicitation} word for people you know (friends, family etc)`,
@@ -125,8 +119,8 @@ window.onload = () => {
     `${solicitation} city, state (ie Washington, D.C)`,
     `${solicitation}n adjectiv`,
     `${solicitation} physics-specific noun (ie "gravity")`,
-    `${solicitation} person's nam`,
-    `${solicitation} numbe`,
+    `${solicitation} person's full name`,
+    `${solicitation} number`,
     `${solicitation} type of document (ie "poem", "essay" etc)`,
     `${solicitation} bad thing (ie an "error")`,
     `${solicitation}n old machine`,
@@ -154,11 +148,11 @@ window.onload = () => {
     // **should we add an "if" to make sure the user actually wrote something? Like 'if variable == "" (an empty string), re-do the message with an additional "hey - you didn't seem to add anything?""
        
     // The User's not-drunk history of computer bugs
-    let originalStory = `<h2>In ${userInputs[0]}, computer pioneer ${userInputs[1]} found herself working on a Mark II ${userInputs[2]} at Harvard ${userInputs[3]}. It was at this time that her ${userInputs[4]} discovered a ${userInputs[5]} had gotten trapped in one of the computer’s ${userInputs[6]} and was causing an error. The ${userInputs[7]} removed the moth and taped it in their log ${userInputs[8]}, identifying it as the "first actual case of bug being ${userInputs[9]}."</h2>
+    let originalStory = `<h2>In ${userInputs[0]}, computer pioneer ${userInputs[1]} found herself working on a ${userInputs[2]} at ${userInputs[3]}. It was at this time that ${userInputs[4]} discovered a ${userInputs[5]} had gotten trapped in one of the ${userInputs[6]} and was causing an error. The ${userInputs[7]} removed the moth and taped it in their ${userInputs[8]}, identifying it as the "first actual case of bug being ${userInputs[9]}."</h2>
 
-    <h2>Word got out that the team had "${userInputs[10]}" the ${userInputs[2]}, hence leading to the phrase’s use in computing and ${userInputs[11]} culture. ${userInputs[1]} readily admitted that ${userInputs[12]} was not there when the incident occurred, but that didn’t stop it from becoming one of ${userInputs[13]} favorite ${userInputs[14]}. ${userInputs[1]} died ${userInputs[15]} of natural causes on January 1, ${userInputs[15]}, at the age of ${userInputs[16]}. For those interested, the offending moth’s ${userInputs[17]}, along with the original log ${userInputs[8]}, can be seen at the Smithsonian National Museum of American ${userInputs[18]} in Washington, D.${userInputs[19]}.</h2>
+    <h2>Word got out that the team had "${userInputs[10]}" the ${userInputs[2]}, hence leading to the phrase’s use in computing and ${userInputs[11]} culture. ${userInputs[1]} readily admitted that ${userInputs[12]} was not there when the incident occurred, but that didn’t stop it from becoming one of ${userInputs[13]} favorite ${userInputs[14]}. ${userInputs[1]} ${userInputs[15]} of natural causes on January 1, ${userInputs[15]}, at the age of ${userInputs[16]}. For those interested, the offending moth’s ${userInputs[17]}, along with the original ${userInputs[8]}, can be seen at the Smithsonian National Museum of American ${userInputs[18]} in ${userInputs[19]}.</h2>
 
-    <h2>And while this is the "${userInputs[20]} use case of finding a computer ${userInputs[2]} ${userInputs[5]}, the original use of the word dates further back in ${userInputs[21]} to Thomas ${userInputs[22]}, who in an ${userInputs[23]} ${userInputs[24]} used the term "bug" to refer to a technological ${userInputs[25]}. While he worked on the quadruplex ${userInputs[26]}, he said it needed a "bug ${userInputs[5]} ${userInputs[27]} to ${userInputs[28]} properly.</h2>`
+    <h2>And while this is the "${userInputs[20]} use case of finding a ${userInputs[2]} ${userInputs[5]}, the original use of the word dates further back in ${userInputs[21]} to ${userInputs[22]}, who in an ${userInputs[23]} ${userInputs[24]} used the term "${userInputs[5]}" to refer to a technological ${userInputs[25]}. While he worked on the quadruplex ${userInputs[26]}, he said it needed a "${userInputs[5]} ${userInputs[27]} to ${userInputs[28]} properly.</h2>`
     console.log(originalStory);
 
     // End of User Inputs
